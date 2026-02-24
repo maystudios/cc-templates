@@ -8,16 +8,17 @@
   },
   "files": [
     "bin/",
-    "src/",
+    "dist/",
     "components.json",
     "README.md"
   ],
   "scripts": {
-    "build": "node scripts/build-catalog.js",
+    "build": "node scripts/build-catalog.js && tsc",
+    "lint": "eslint src/",
     "prepublishOnly": "npm run build"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "dependencies": {
     "chalk": "^5.4.1",
