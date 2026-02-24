@@ -9,17 +9,17 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 
 ## Current Position
 
-Phase: 2.1 of v1.0 (TypeScript Migration — COMPLETE)
-Plan: 02.1-05 complete (5 of 5 plans done) — Phase 2.1 FINISHED
-Status: Phase 2.1 Complete — proceed to Phase 3
-Last activity: 2026-02-24 — 02.1-05: cli.ts migrated, bin updated to dist/, smoke tests pass — Phase 2.1 TypeScript migration 100% complete
+Phase: 03-discovery-ux
+Plan: 03-02 complete (2 of 5 plans done)
+Status: In progress — Phase 3 Discovery UX
+Last activity: 2026-02-24 — 03-02: src/list.ts created, TTY-aware grouped catalog listing with chalk, printList() exports cleanly
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
+- Total plans completed: 12
 - Average duration: 2 min
-- Total execution time: 23 min
+- Total execution time: 24 min
 
 **By Phase:**
 
@@ -28,6 +28,7 @@ Last activity: 2026-02-24 — 02.1-05: cli.ts migrated, bin updated to dist/, sm
 | 01-scaffold | 1 | 2 min | 2 min |
 | 02-core-installer | 5 | 10 min | 2 min |
 | 02.1-typescript-migration | 5 | 11 min | 2.2 min |
+| 03-discovery-ux | 1 | 1 min | 1 min |
 
 ## Accumulated Context
 
@@ -39,6 +40,7 @@ All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 miles
 - [02.1-03]: write-file-atomic typed via inline call-signature (not import type) due to export= CJS declaration; hookData and settings JSON typed as Record<string,any> for dynamic JSON shapes
 - [02.1-04]: plan array typed as Array<{ type: ComponentType; name: string }> (not string) to satisfy validateName(ComponentType, string) signature in catalog.ts; (err as Error).message cast used in catch blocks
 - [02.1-05]: program.opts<InstallOptions>() for typed commander options; bin/index.js kept as plain .js shim pointing to dist/; node:test built-in used for smoke tests (no extra devDependency)
+- [03-02]: isTTY explicit guard used for structural routing; chalk auto-suppresses ANSI independently; TYPES omits mcp (no v0.1 entries); TYPE_LABELS includes mcp key for Record<ComponentType,string> type completeness
 
 ### Roadmap Evolution
 
@@ -56,5 +58,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 02.1-05-PLAN.md — cli.ts migrated to TypeScript, bin/index.js updated to dist/, smoke tests created and passing, Phase 2.1 TypeScript migration 100% complete
+Stopped at: Completed 03-02-PLAN.md — src/list.ts created with TTY-aware grouped catalog listing, printList() exports cleanly, zero TS errors
 Resume file: None
