@@ -5,33 +5,34 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** The fastest way to extend Claude Code with reusable, community-contributed components — one command, files in the right place.
-**Current focus:** Phase 1 — Scaffold
+**Current focus:** Phase 2 — Core Installer
 
 ## Current Position
 
-Phase: 1 of 4 (Scaffold)
-Plan: 1 of 1 in current phase (Phase 1 complete)
-Status: Phase 1 complete — ready for Phase 2 (Core Installer)
-Last activity: 2026-02-24 — Plan 01-01 executed; npm scaffold + component library created
+Phase: 2 of 4 (Core Installer)
+Plan: 1 of 4 in current phase (Plan 02-01 complete)
+Status: Plan 02-01 complete — foundation modules ready; Wave 2 installer plans (02-02, 02-03, 02-04) can now run in parallel
+Last activity: 2026-02-24 — Plan 02-01 executed; src/fetch.js, src/output.js, src/catalog.js created; write-file-atomic installed
 
-Progress: [██░░░░░░░░] 25%
+Progress: [████░░░░░░] 37%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
+- Total plans completed: 2
 - Average duration: 2 min
-- Total execution time: 2 min
+- Total execution time: 4 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-scaffold | 1 | 2 min | 2 min |
+| 02-core-installer | 1 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2 min)
-- Trend: —
+- Last 5 plans: 01-01 (2 min), 02-01 (2 min)
+- Trend: Stable
 
 *Updated after each plan completion*
 
@@ -49,6 +50,10 @@ Recent decisions affecting current work:
 - [01-01]: ESM-only package (type:module) with js-yaml CJS-from-ESM dynamic import and createRequire fallback
 - [01-01]: components/ directory excluded from npm files — stays on GitHub for runtime fetch; components.json included for offline listing
 - [01-01]: build-catalog.js uses getMainFile() helper to support both directory skills and future flat-file hooks/commands
+- [02-01]: anthropics-community/cc-templates used as DEFAULT_REPO in src/fetch.js (matches plan spec; no git remote configured)
+- [02-01]: catalog.js reads components.json synchronously at module load — always present in npm package, sync is correct
+- [02-01]: getAvailable() returns [] for missing catalog keys (agents not yet in components.json) via nullish coalescing
+- [02-01]: validateName() for empty-catalog types throws with "(none yet)" rather than crashing
 
 ### Pending Todos
 
@@ -61,6 +66,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-24T11:58:10Z
-Stopped at: Completed 01-01-PLAN.md — npm scaffold and component library created, components.json generated
+Last session: 2026-02-24T13:24:38Z
+Stopped at: Completed 02-01-PLAN.md — foundation modules (fetch.js, output.js, catalog.js) created; write-file-atomic installed
 Resume file: None

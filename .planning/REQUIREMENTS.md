@@ -11,9 +11,9 @@
 - [ ] **INST-02**: User can install an agent via `npx cc-templates --agent <name>` — downloads `.md` file to `.claude/agents/<name>.md`
 - [ ] **INST-03**: User can install a command via `npx cc-templates --command <name>` — downloads `.md` file to `.claude/commands/<name>.md`
 - [ ] **INST-04**: User can install a hook via `npx cc-templates --hook <name>` — fetches hook JSON and deep-merges into target `settings.json`
-- [ ] **INST-05**: User can install to user-global `~/.claude/` instead of project-local `.claude/` via `--global` flag
+- [x] **INST-05**: User can install to user-global `~/.claude/` instead of project-local `.claude/` via `--global` flag
 - [ ] **INST-06**: User can force reinstall of an already-installed component via `--overwrite` / `--force` flag
-- [ ] **INST-07**: User can point the CLI at a forked GitHub repo via `CC_TEMPLATES_REPO` environment variable
+- [x] **INST-07**: User can point the CLI at a forked GitHub repo via `CC_TEMPLATES_REPO` environment variable
 
 ### Installation — Component Library
 
@@ -25,7 +25,7 @@
 
 ### Safety & UX
 
-- [ ] **SAFE-01**: User sees a clear error message when a requested component does not exist, with a list of available components of that type shown inline
+- [x] **SAFE-01**: User sees a clear error message when a requested component does not exist, with a list of available components of that type shown inline
 - [ ] **SAFE-02**: User is warned (and install is aborted) when target file/directory already exists, unless `--force` is passed
 - [ ] **SAFE-03**: User can preview what would be installed without any files being written via `--dry-run` flag
 - [ ] **SAFE-04**: User can run the CLI non-interactively in CI pipelines via `--yes` flag (skips all confirmation prompts)
@@ -78,15 +78,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INST-02 | Phase 2 | Pending |
 | INST-03 | Phase 2 | Pending |
 | INST-04 | Phase 2 | Pending |
-| INST-05 | Phase 2 | Pending |
+| INST-05 | Phase 2 | Complete |
 | INST-06 | Phase 2 | Pending |
-| INST-07 | Phase 2 | Pending |
+| INST-07 | Phase 2 | Complete |
 | COMP-01 | Phase 2 | Pending |
 | COMP-02 | Phase 2 | Pending |
 | COMP-03 | Phase 2 | Pending |
 | COMP-04 | Phase 1 | Complete |
 | COMP-05 | Phase 1 | Complete |
-| SAFE-01 | Phase 2 | Pending |
+| SAFE-01 | Phase 2 | Complete |
 | SAFE-02 | Phase 2 | Pending |
 | SAFE-03 | Phase 4 | Pending |
 | SAFE-04 | Phase 2 | Pending |
@@ -104,4 +104,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after 01-01 execution (COMP-04, COMP-05 complete)*
+*Last updated: 2026-02-24 after 02-01 execution (INST-05, INST-07, SAFE-01 complete)*
