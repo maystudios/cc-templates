@@ -3,7 +3,7 @@
 Install Claude Code components — skills, agents, hooks, and commands — with one command.
 
 [![npm version](https://img.shields.io/npm/v/cc-templates.svg)](https://www.npmjs.com/package/cc-templates)
-[![License: MIT](https://img.shields.io/npm/l/cc-templates.svg)](https://github.com/anthropics-community/cc-templates/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/npm/l/cc-templates.svg)](https://github.com/maystudios/cc-templates/blob/main/LICENSE)
 [![Node.js >=22](https://img.shields.io/node/v/cc-templates.svg)](https://nodejs.org)
 
 ---

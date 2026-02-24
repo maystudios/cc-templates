@@ -40,15 +40,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anthropics-community/cc-templates.git"
+    "url": "https://github.com/maystudios/cc-templates.git"
   },
   "bugs": {
-    "url": "https://github.com/anthropics-community/cc-templates/issues"
+    "url": "https://github.com/maystudios/cc-templates/issues"
   },
-  "homepage": "https://github.com/anthropics-community/cc-templates#readme",
-  "publishConfig": {
-    "provenance": true
-  },
+  "homepage": "https://github.com/maystudios/cc-templates#readme",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@semantic-release/commit-analyzer": "^13.0.1",
