@@ -1,21 +1,20 @@
-// src/install.js
+// src/install.ts
 import { installSkill } from './installers/skill.js';
 import { installAgent } from './installers/agent.js';
 import { installCommand } from './installers/command.js';
 import { installHook } from './installers/hook.js';
 import { validateName } from './catalog.js';
 import { output } from './output.js';
+import { InstallOptions, ComponentType } from './types.js';
 
 /**
  * Run all installs requested by CLI opts.
  * Dispatches to per-type installers; fails fast on first error.
- * @param {object} opts - Parsed commander options
- *   { skill, agent, command, hook, mcp, force, global, yes, verbose, list }
  */
-export async function runInstall(opts) {
+export async function runInstall(opts: InstallOptions): Promise<void> {
   // Build ordered install plan from present flags
   // Each item: { type: string, name: string }
-  const plan = [];
+  const plan: Array<{ type: ComponentType; name: string }> = [];
 
   // opts values: each flag is a single string (not array) per CONTEXT.md decision
   // "multiple flags in single invocation" means --skill foo --hook bar, not --skill foo bar
@@ -38,7 +37,7 @@ export async function runInstall(opts) {
     try {
       validateName(item.type, item.name);
     } catch (err) {
-      output.error(err.message);
+      output.error((err as Error).message);
       process.exit(1);
     }
   }
@@ -64,7 +63,7 @@ export async function runInstall(opts) {
       }
     } catch (err) {
       // Fail fast: report which component failed and why, then exit 1
-      output.error(`Failed to install ${item.type} "${item.name}": ${err.message}`);
+      output.error(`Failed to install ${item.type} "${item.name}": ${(err as Error).message}`);
       process.exit(1);
     }
   }
