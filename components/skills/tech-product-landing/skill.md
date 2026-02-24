@@ -7,6 +7,19 @@ description: >
   Trigger when user says "create a landing page for my software", "build a product site", "make a landing page
   like maxsim-flutter", "developer landing page", or "CLI tool website". Stack: Vite + React + TypeScript +
   Tailwind CSS v4 + Framer Motion + Lucide React.
+author: maystudios
+version: 1.0.0
+tags:
+  - landing-page
+  - frontend
+  - react
+  - vite
+  - tailwind
+  - typescript
+requires:
+  tools:
+    - node
+    - npm
 ---
 
 # Tech Product Landing Page

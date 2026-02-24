@@ -1,0 +1,26 @@
+{
+  "name": "cc-templates",
+  "owner": {
+    "name": "maystudios",
+    "url": "https://github.com/maystudios"
+  },
+  "metadata": {
+    "description": "Install Claude Code components — skills, agents, hooks, and commands — with one command via npx cc-templates",
+    "version": "1.0.0",
+    "repository": "https://github.com/maystudios/cc-templates"
+  },
+  "plugins": [
+    {
+      "name": "cc-templates",
+      "description": "4 Claude Code skills for landing pages, video downloading, and AI-powered video summarization",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./components/skills/tech-product-landing",
+        "./components/skills/video-download",
+        "./components/skills/video-fetch-and-summarize",
+        "./components/skills/video-summarizer"
+      ]
+    }
+  ]
+}
