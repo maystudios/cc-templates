@@ -27,7 +27,7 @@ try {
  */
 export async function installHook(name: string, opts: InstallOptions = {}): Promise<{ success: boolean }> {
   // SAFE-01: validate before any network call
-  validateName('hook', name);
+  const entry = validateName('hook', name);
 
   // INST-05: resolve settings.json path
   const baseDir: string = opts.global ? homedir() : process.cwd();
@@ -89,8 +89,8 @@ export async function installHook(name: string, opts: InstallOptions = {}): Prom
   // SAFE-06: Atomic write — write to temp file, then rename (no partial-write corruption)
   await writeFileAtomic(settingsPath, JSON.stringify(merged, null, 2) + '\n');
 
-  const keyList: string = addedKeys.join(', ');
-  output.success(`Added ${keyList} hook to settings.json`);
+  const authorSuffix = entry.author ? `  by ${entry.author}` : '';
+  output.success(`${name} hook added to settings.json${authorSuffix}`);
   if (opts.verbose) {
     for (const key of addedKeys) {
       output.verbose(`  ${key}: appended ${hookData.hooks[key].length} matcher group(s)`);

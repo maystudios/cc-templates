@@ -12,7 +12,7 @@ import { InstallOptions } from '../types.js';
  */
 export async function installCommand(name: string, opts: InstallOptions = {}): Promise<{ success: boolean; reason?: string }> {
   // SAFE-01: validate before fetching
-  validateName('command', name);
+  const entry = validateName('command', name);
 
   // INST-05: resolve base dir
   const baseDir: string = opts.global ? homedir() : process.cwd();
@@ -47,8 +47,8 @@ export async function installCommand(name: string, opts: InstallOptions = {}): P
   const displayPath: string = opts.global
     ? `~/.claude/commands/${name}.md`
     : `.claude/commands/${name}.md`;
-  output.success(`Installed ${name} command to ${displayPath}`);
-  output.hint(`Use this command in Claude Code with /${name}`);
+  const authorSuffix = entry.author ? `  by ${entry.author}` : '';
+  output.success(`${name} installed to ${displayPath}${authorSuffix}`);
 
   return { success: true };
 }
