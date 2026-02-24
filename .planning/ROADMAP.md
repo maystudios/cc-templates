@@ -28,7 +28,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `npm pack --dry-run` lists only the files that should ship (bin/, src/, components.json, package.json, README)
   3. `components.json` exists at the repo root and lists all available components with name, description, and author fields
   4. All component source files contain valid YAML frontmatter with at minimum `name` and `description` fields
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 01-01-PLAN.md — Package scaffold, CLI entry point, component library seed, and catalog generation
 
 ### Phase 2: Core Installer
 **Goal**: Users can install any of the four component types via CLI flags with safety guarantees — no data loss, no silent overwrites, no Windows failures
@@ -69,7 +72,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Scaffold | 0/TBD | Not started | - |
+| 1. Scaffold | 0/1 | Not started | - |
 | 2. Core Installer | 0/TBD | Not started | - |
 | 3. Discovery UX | 0/TBD | Not started | - |
 | 4. Polish + Publish | 0/TBD | Not started | - |
