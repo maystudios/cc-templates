@@ -1,6 +1,34 @@
 {
   "skills": [
     {
+      "name": "find-skills",
+      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.",
+      "author": null,
+      "version": null,
+      "tags": []
+    },
+    {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "author": null,
+      "version": null,
+      "tags": []
+    },
+    {
+      "name": "skill-creator",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "author": null,
+      "version": null,
+      "tags": []
+    },
+    {
+      "name": "tech-product-landing",
+      "description": "Build production-grade landing pages for software/CLI tools, developer libraries, and technical products. Uses the \"Maxsim-style\" design system: dark theme, blue accent glows, framer-motion animations, geometric hero grid, marquee tech stack, tabbed docs, and timeline how-it-works sections. Trigger when user says \"create a landing page for my software\", \"build a product site\", \"make a landing page like maxsim-flutter\", \"developer landing page\", or \"CLI tool website\". Stack: Vite + React + TypeScript + Tailwind CSS v4 + Framer Motion + Lucide React.\n",
+      "author": null,
+      "version": null,
+      "tags": []
+    },
+    {
       "name": "video-download",
       "description": "Download videos from YouTube, Instagram, TikTok, and more via yt-dlp",
       "author": "cc-templates",
