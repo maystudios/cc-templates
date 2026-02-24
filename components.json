@@ -1,0 +1,41 @@
+{
+  "skills": [
+    {
+      "name": "video-download",
+      "description": "Download videos from YouTube, Instagram, TikTok, and more via yt-dlp",
+      "author": "cc-templates",
+      "version": "1.0.0",
+      "tags": [
+        "video",
+        "download",
+        "media"
+      ]
+    },
+    {
+      "name": "video-fetch-and-summarize",
+      "description": "Download videos and generate AI summaries using Google Gemini",
+      "author": "cc-templates",
+      "version": "1.0.0",
+      "tags": [
+        "video",
+        "download",
+        "summarize",
+        "ai"
+      ]
+    },
+    {
+      "name": "video-summarizer",
+      "description": "Generate AI summaries of existing MP4 files using Google Gemini",
+      "author": "cc-templates",
+      "version": "1.0.0",
+      "tags": [
+        "video",
+        "summarize",
+        "ai"
+      ]
+    }
+  ],
+  "hooks": [],
+  "commands": [],
+  "mcp": []
+}
