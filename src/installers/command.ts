@@ -1,23 +1,22 @@
-// src/installers/command.js
+// src/installers/command.ts
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { homedir } from 'node:os';
 import { buildRawUrl } from '../fetch.js';
 import { output } from '../output.js';
 import { validateName } from '../catalog.js';
+import { InstallOptions } from '../types.js';
 
 /**
  * Install a command component (.md file) to .claude/commands/<name>.md
- * @param {string} name - Command name
- * @param {object} opts - CLI options: { force, global, verbose }
  */
-export async function installCommand(name, opts = {}) {
+export async function installCommand(name: string, opts: InstallOptions = {}): Promise<{ success: boolean; reason?: string }> {
   // SAFE-01: validate before fetching
   validateName('command', name);
 
   // INST-05: resolve base dir
-  const baseDir = opts.global ? homedir() : process.cwd();
-  const targetPath = join(baseDir, '.claude', 'commands', `${name}.md`);
+  const baseDir: string = opts.global ? homedir() : process.cwd();
+  const targetPath: string = join(baseDir, '.claude', 'commands', `${name}.md`);
 
   // SAFE-02: conflict check
   if (existsSync(targetPath)) {
@@ -30,14 +29,14 @@ export async function installCommand(name, opts = {}) {
   }
 
   // Fetch from raw.githubusercontent.com
-  const url = buildRawUrl('commands', `${name}.md`);
+  const url: string = buildRawUrl('commands', `${name}.md`);
   if (opts.verbose) output.verbose(`  fetching ${url}`);
 
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Failed to fetch command "${name}" (HTTP ${res.status}): ${url}`);
   }
-  const content = await res.text();
+  const content: string = await res.text();
 
   // Write file (create parent dirs if needed)
   mkdirSync(dirname(targetPath), { recursive: true });
@@ -45,7 +44,7 @@ export async function installCommand(name, opts = {}) {
 
   if (opts.verbose) output.verbose(`  wrote ${targetPath}`);
 
-  const displayPath = opts.global
+  const displayPath: string = opts.global
     ? `~/.claude/commands/${name}.md`
     : `.claude/commands/${name}.md`;
   output.success(`Installed ${name} command to ${displayPath}`);
