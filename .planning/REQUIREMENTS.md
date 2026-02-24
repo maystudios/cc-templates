@@ -7,7 +7,7 @@
 
 ### Installation — Core Flags
 
-- [ ] **INST-01**: User can install a skill via `npx cc-templates --skill <name>` — downloads directory to `.claude/skills/<name>/`
+- [x] **INST-01**: User can install a skill via `npx cc-templates --skill <name>` — downloads directory to `.claude/skills/<name>/`
 - [x] **INST-02**: User can install an agent via `npx cc-templates --agent <name>` — downloads `.md` file to `.claude/agents/<name>.md`
 - [x] **INST-03**: User can install a command via `npx cc-templates --command <name>` — downloads `.md` file to `.claude/commands/<name>.md`
 - [ ] **INST-04**: User can install a hook via `npx cc-templates --hook <name>` — fetches hook JSON and deep-merges into target `settings.json`
@@ -17,9 +17,9 @@
 
 ### Installation — Component Library
 
-- [ ] **COMP-01**: `video-download` skill is available to install (downloads videos from YouTube, Instagram, TikTok, etc. via yt-dlp)
-- [ ] **COMP-02**: `video-fetch-and-summarize` skill is available to install (downloads videos + generates Gemini summaries)
-- [ ] **COMP-03**: `video-summarizer` skill is available to install (summarizes existing MP4 files via Gemini)
+- [x] **COMP-01**: `video-download` skill is available to install (downloads videos from YouTube, Instagram, TikTok, etc. via yt-dlp)
+- [x] **COMP-02**: `video-fetch-and-summarize` skill is available to install (downloads videos + generates Gemini summaries)
+- [x] **COMP-03**: `video-summarizer` skill is available to install (summarizes existing MP4 files via Gemini)
 - [x] **COMP-04**: All component files include YAML frontmatter with `name`, `description`, and optional `author` fields
 - [x] **COMP-05**: Pre-generated `components.json` catalog is shipped inside the npm package for offline/instant listing
 
@@ -74,16 +74,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INST-01 | Phase 2 | Pending |
+| INST-01 | Phase 2 | Complete |
 | INST-02 | Phase 2 | Complete |
 | INST-03 | Phase 2 | Complete |
 | INST-04 | Phase 2 | Pending |
 | INST-05 | Phase 2 | Complete |
 | INST-06 | Phase 2 | Complete |
 | INST-07 | Phase 2 | Complete |
-| COMP-01 | Phase 2 | Pending |
-| COMP-02 | Phase 2 | Pending |
-| COMP-03 | Phase 2 | Pending |
+| COMP-01 | Phase 2 | Complete |
+| COMP-02 | Phase 2 | Complete |
+| COMP-03 | Phase 2 | Complete |
 | COMP-04 | Phase 1 | Complete |
 | COMP-05 | Phase 1 | Complete |
 | SAFE-01 | Phase 2 | Complete |
