@@ -52,7 +52,13 @@ Plans:
   1. User runs `npx cc-templates` with no flags and sees an arrow-key menu that lets them pick a component type then a specific component and triggers install
   2. User runs `npx cc-templates --list` and sees all available components with descriptions and author attribution
   3. After a successful install, the terminal output includes the component author's name
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Install @inquirer/prompts + create src/menu.ts (two-level interactive menu)
+- [ ] 03-02-PLAN.md — Create src/list.ts (TTY-aware grouped catalog listing)
+- [ ] 03-03-PLAN.md — Update four installers for author attribution + remove hint() calls
+- [ ] 03-04-PLAN.md — Wire src/cli.ts + full build verification + human checkpoint
 
 ### Phase 4: Polish + Publish
 **Goal**: The CLI is safe to publish publicly — dry-run flag lets cautious users preview installs, stale-cache warning prevents confusion, and Windows CI confirms cross-platform correctness
