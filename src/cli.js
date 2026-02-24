@@ -1,12 +1,14 @@
+// src/cli.js
 import { Command } from 'commander';
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runInstall } from './install.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf8'));
 
-export function run() {
+export async function run() {
   const program = new Command();
 
   program
@@ -17,29 +19,59 @@ export function run() {
 
   program.addHelpText('beforeAll', 'cc-templates — Install Claude Code components\n');
 
+  // Component type flags (INST-01 through INST-04 + INST-02 agent)
   program
     .option('--skill <name>',   'Install a skill component')
+    .option('--agent <name>',   'Install an agent component')
     .option('--hook <name>',    'Install a hook component')
     .option('--command <name>', 'Install a command component')
-    .option('--mcp <name>',     'Install an MCP component')
+    .option('--mcp <name>',     'Install an MCP component (coming soon)');
+
+  // Listing
+  program
     .option('--list',           'List all available components');
+
+  // Behavior modifiers
+  program
+    .option('--force',   'Overwrite existing component without prompting (INST-06)')
+    .option('--global',  'Install to ~/.claude/ instead of .claude/ (INST-05)')
+    .option('--yes',     'Skip all confirmation prompts — CI mode (SAFE-04)')
+    .option('--verbose', 'Show detailed output for each file written');
 
   program.addHelpText('after', `
 Examples:
   npx cc-templates --list
   npx cc-templates --skill video-download
+  npx cc-templates --skill video-download --global
   npx cc-templates --hook auto-format
-  npx cc-templates --command git-summary`);
+  npx cc-templates --skill video-download --hook auto-format
+  npx cc-templates --command git-summary --force
+  npx cc-templates --skill video-download --yes`);
 
   program.parse(process.argv);
 
   const opts = program.opts();
 
-  // Phase 2 will implement actual install logic. For now, print a "coming soon" stub
-  // for any recognized flag so the CLI feels usable during Phase 1 testing.
-  if (opts.skill)   { console.log(`[stub] Would install skill: ${opts.skill}`); }
-  if (opts.hook)    { console.log(`[stub] Would install hook: ${opts.hook}`); }
-  if (opts.command) { console.log(`[stub] Would install command: ${opts.command}`); }
-  if (opts.mcp)     { console.log(`[stub] Would install mcp: ${opts.mcp}`); }
-  if (opts.list)    { console.log('[stub] Would list all components'); }
+  // --list: Phase 3 will implement the full interactive/catalog listing.
+  // For Phase 2, print a stub message so the flag doesn't silently fail.
+  if (opts.list) {
+    console.log('[Phase 3] --list will show all available components. Coming soon.');
+    return;
+  }
+
+  // Install flags: dispatch to runInstall orchestrator
+  const hasInstallFlag = opts.skill || opts.agent || opts.command || opts.hook || opts.mcp;
+
+  if (hasInstallFlag) {
+    // opts.mcp is not implemented in Phase 2 — warn if attempted
+    if (opts.mcp) {
+      console.error('MCP install is not yet implemented. Check back in a future version.');
+      process.exit(1);
+    }
+    await runInstall(opts);
+    return;
+  }
+
+  // No flags: show help (Phase 3 will replace this with interactive menu — DISC-01)
+  program.help();
 }
