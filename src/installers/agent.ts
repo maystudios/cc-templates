@@ -12,7 +12,7 @@ import { InstallOptions } from '../types.js';
  */
 export async function installAgent(name: string, opts: InstallOptions = {}): Promise<{ success: boolean; reason?: string }> {
   // SAFE-01: validate before fetching (catalog.js throws with inline list on failure)
-  validateName('agent', name);
+  const entry = validateName('agent', name);
 
   // INST-05: resolve base dir
   const baseDir: string = opts.global ? homedir() : process.cwd();
@@ -48,8 +48,8 @@ export async function installAgent(name: string, opts: InstallOptions = {}): Pro
   const displayPath: string = opts.global
     ? `~/.claude/agents/${name}.md`
     : `.claude/agents/${name}.md`;
-  output.success(`Installed ${name} agent to ${displayPath}`);
-  output.hint(`Use this agent in Claude Code with @${name}`);
+  const authorSuffix = entry.author ? `  by ${entry.author}` : '';
+  output.success(`${name} installed to ${displayPath}${authorSuffix}`);
 
   return { success: true };
 }

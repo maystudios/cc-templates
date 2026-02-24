@@ -57,7 +57,7 @@ async function downloadDirectory(apiUrl: string, targetDir: string, opts: Instal
  */
 export async function installSkill(name: string, opts: InstallOptions = {}): Promise<{ success: boolean; reason?: string }> {
   // SAFE-01: validate before any network call
-  validateName('skill', name);
+  const entry = validateName('skill', name);
 
   // INST-05: resolve base dir
   const baseDir: string = opts.global ? homedir() : process.cwd();
@@ -88,8 +88,8 @@ export async function installSkill(name: string, opts: InstallOptions = {}): Pro
   const displayPath: string = opts.global
     ? `~/.claude/skills/${name}/`
     : `.claude/skills/${name}/`;
-  output.success(`Installed ${name} skill to ${displayPath}`);
-  output.hint(`Use this skill in Claude Code with /${name}`);
+  const authorSuffix = entry.author ? `  by ${entry.author}` : '';
+  output.success(`${name} installed to ${displayPath}${authorSuffix}`);
 
   return { success: true };
 }
