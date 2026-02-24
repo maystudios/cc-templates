@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 2.1 of v1.0 (TypeScript Migration — INSERTED)
-Plan: 02.1-03 complete (3 of 5 plans done)
-Status: In Progress — Plan 03 complete, proceed to Plan 04
-Last activity: 2026-02-24 — 02.1-03: Four installer files migrated to TypeScript (agent, command, hook, skill)
+Plan: 02.1-04 complete (4 of 5 plans done)
+Status: In Progress — Plan 04 complete, proceed to Plan 05
+Last activity: 2026-02-24 — 02.1-04: install.ts migrated to TypeScript (install.js deleted)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: 2 min
-- Total execution time: 19 min
+- Total execution time: 21 min
 
 **By Phase:**
 
@@ -27,7 +27,7 @@ Last activity: 2026-02-24 — 02.1-03: Four installer files migrated to TypeScri
 |-------|-------|-------|----------|
 | 01-scaffold | 1 | 2 min | 2 min |
 | 02-core-installer | 5 | 10 min | 2 min |
-| 02.1-typescript-migration | 3 | 7 min | 2.3 min |
+| 02.1-typescript-migration | 4 | 9 min | 2.3 min |
 
 ## Accumulated Context
 
@@ -37,6 +37,7 @@ All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 miles
 - [Phase 02.1-typescript-migration]: Used tsc as sole build tool (no esbuild/tsup); eslint.config.js flat config with typescript-eslint; build script chains catalog+tsc; engines >=22
 - [02.1-02]: All relative imports use .js extension per NodeNext ESM resolution; src/types.ts is single source of truth for shared interfaces; JSDoc @param/@returns removed in favour of TypeScript signatures
 - [02.1-03]: write-file-atomic typed via inline call-signature (not import type) due to export= CJS declaration; hookData and settings JSON typed as Record<string,any> for dynamic JSON shapes
+- [02.1-04]: plan array typed as Array<{ type: ComponentType; name: string }> (not string) to satisfy validateName(ComponentType, string) signature in catalog.ts; (err as Error).message cast used in catch blocks
 
 ### Roadmap Evolution
 
@@ -54,5 +55,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 02.1-03-PLAN.md — agent.ts, command.ts, hook.ts, skill.ts migrated to TypeScript (old .js files deleted)
+Stopped at: Completed 02.1-04-PLAN.md — install.ts migrated to TypeScript with InstallOptions/ComponentType types (old install.js deleted)
 Resume file: None
