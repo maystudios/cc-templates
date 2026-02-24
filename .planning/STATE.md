@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 2 of 4 (Core Installer)
-Plan: 1 of 4 in current phase (Plan 02-01 complete)
-Status: Plan 02-01 complete — foundation modules ready; Wave 2 installer plans (02-02, 02-03, 02-04) can now run in parallel
-Last activity: 2026-02-24 — Plan 02-01 executed; src/fetch.js, src/output.js, src/catalog.js created; write-file-atomic installed
+Plan: 2 of 4 in current phase (Plan 02-02 complete)
+Status: Plan 02-02 complete — agent and command installers ready; Wave 2 plans 02-03, 02-04 still pending
+Last activity: 2026-02-24 — Plan 02-02 executed; src/installers/agent.js and src/installers/command.js created
 
-Progress: [████░░░░░░] 37%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
+- Total plans completed: 3
 - Average duration: 2 min
-- Total execution time: 4 min
+- Total execution time: 7 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-scaffold | 1 | 2 min | 2 min |
-| 02-core-installer | 1 | 2 min | 2 min |
+| 02-core-installer | 2 | 5 min | 2.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2 min), 02-01 (2 min)
+- Last 5 plans: 01-01 (2 min), 02-01 (2 min), 02-02 (3 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -54,6 +54,8 @@ Recent decisions affecting current work:
 - [02-01]: catalog.js reads components.json synchronously at module load — always present in npm package, sync is correct
 - [02-01]: getAvailable() returns [] for missing catalog keys (agents not yet in components.json) via nullish coalescing
 - [02-01]: validateName() for empty-catalog types throws with "(none yet)" rather than crashing
+- [02-02]: writeFileSync used over write-file-atomic for single .md file installs — no partial-write risk; write-file-atomic reserved for hooks merger
+- [02-02]: No HTTP retry or timeout added in Phase 2 — plan explicitly prohibits these; minimal implementation kept
 
 ### Pending Todos
 
@@ -66,6 +68,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-24T13:24:38Z
-Stopped at: Completed 02-01-PLAN.md — foundation modules (fetch.js, output.js, catalog.js) created; write-file-atomic installed
+Last session: 2026-02-24T13:30:00Z
+Stopped at: Completed 02-02-PLAN.md — agent and command installers (src/installers/agent.js, src/installers/command.js) created
 Resume file: None

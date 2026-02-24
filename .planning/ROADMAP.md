@@ -47,7 +47,7 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Foundation modules: fetch.js URL builder, output.js chalk helpers, catalog.js validator, write-file-atomic dependency
-- [ ] 02-02-PLAN.md — Single-file installers: agent.js and command.js (raw.githubusercontent.com fetch pattern)
+- [x] 02-02-PLAN.md — Single-file installers: agent.js and command.js (raw.githubusercontent.com fetch pattern)
 - [ ] 02-03-PLAN.md — Skill directory installer: skill.js using GitHub Contents API recursive download
 - [ ] 02-04-PLAN.md — Hook installer: hook.js with array-append deep-merge and atomic write to settings.json
 - [ ] 02-05-PLAN.md — Orchestrator and CLI wiring: install.js multi-install dispatch, cli.js updated with all flags
@@ -80,6 +80,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Scaffold | 1/1 | Complete | 2026-02-24 |
-| 2. Core Installer | 1/5 | In progress | - |
+| 2. Core Installer | 2/5 | In progress | - |
 | 3. Discovery UX | 0/TBD | Not started | - |
 | 4. Polish + Publish | 0/TBD | Not started | - |
