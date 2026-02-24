@@ -28,7 +28,7 @@
 - [x] **SAFE-01**: User sees a clear error message when a requested component does not exist, with a list of available components of that type shown inline
 - [x] **SAFE-02**: User is warned (and install is aborted) when target file/directory already exists, unless `--force` is passed
 - [ ] **SAFE-03**: User can preview what would be installed without any files being written via `--dry-run` flag
-- [ ] **SAFE-04**: User can run the CLI non-interactively in CI pipelines via `--yes` flag (skips all confirmation prompts)
+- [x] **SAFE-04**: User can run the CLI non-interactively in CI pipelines via `--yes` flag (skips all confirmation prompts)
 - [ ] **SAFE-05**: User sees a non-blocking warning at startup when running a stale npx-cached version (checked against npm registry)
 - [x] **SAFE-06**: Hooks installer deep-merges new hook entries into existing `settings.json` without overwriting or removing any existing keys (atomic write via temp file + rename)
 - [x] **SAFE-07**: Hook command strings containing `python3` are automatically replaced with `python` on Windows
@@ -89,7 +89,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SAFE-01 | Phase 2 | Complete |
 | SAFE-02 | Phase 2 | Complete |
 | SAFE-03 | Phase 4 | Pending |
-| SAFE-04 | Phase 2 | Pending |
+| SAFE-04 | Phase 2 | Complete |
 | SAFE-05 | Phase 4 | Pending |
 | SAFE-06 | Phase 2 | Complete |
 | SAFE-07 | Phase 2 | Complete |
