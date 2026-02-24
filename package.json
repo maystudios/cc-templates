@@ -22,8 +22,14 @@
   "dependencies": {
     "chalk": "^5.4.1",
     "commander": "^14.0.0",
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^4.1.1",
+    "write-file-atomic": "^7.0.0"
   },
-  "keywords": ["claude", "claude-code", "components", "cli"],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "components",
+    "cli"
+  ],
   "license": "MIT"
 }
