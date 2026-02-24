@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 2 of 4 (Core Installer)
-Plan: 3 of 4 in current phase (Plan 02-03 complete)
-Status: Plan 02-03 complete — skill directory installer ready; Wave 2 plan 02-04 (hook installer) still pending
-Last activity: 2026-02-24 — Plan 02-03 executed; src/installers/skill.js created
+Plan: 4 of 4 in current phase (Plan 02-04 complete)
+Status: Plan 02-04 complete — hook JSON installer ready; Phase 2 fully complete
+Last activity: 2026-02-24 — Plan 02-04 executed; src/installers/hook.js created
 
-Progress: [██████░░░░] 62%
+Progress: [████████░░] 75%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 2 min
-- Total execution time: 9 min
+- Total execution time: 10 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-scaffold | 1 | 2 min | 2 min |
-| 02-core-installer | 3 | 7 min | 2.3 min |
+| 02-core-installer | 4 | 8 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2 min), 02-01 (2 min), 02-02 (3 min), 02-03 (2 min)
+- Last 5 plans: 02-01 (2 min), 02-02 (3 min), 02-03 (2 min), 02-04 (1 min)
 - Trend: Stable
 
 *Updated after each plan completion*
@@ -58,6 +58,8 @@ Recent decisions affecting current work:
 - [02-02]: No HTTP retry or timeout added in Phase 2 — plan explicitly prohibits these; minimal implementation kept
 - [Phase 02-03]: GitHub Contents API (not raw URLs) required for skill directories — raw URLs only work for individual files
 - [Phase 02-03]: Live GitHub test returned 404 (repo not yet published) — installer correctly handles data-integrity case; all offline behaviors verified passing
+- [Phase 02-04]: write-file-atomic uses createRequire ESM/CJS interop pattern matching existing js-yaml import in build-catalog.js
+- [Phase 02-04]: Hook array-append merge uses spread pattern [...existing, ...new] to prevent clobbering user hooks
 
 ### Pending Todos
 
@@ -70,6 +72,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-24T13:33:00Z
-Stopped at: Completed 02-03-PLAN.md — skill directory installer (src/installers/skill.js) created
+Last session: 2026-02-24T13:36:51Z
+Stopped at: Completed 02-04-PLAN.md — hook installer (src/installers/hook.js) created; Phase 2 complete
 Resume file: None

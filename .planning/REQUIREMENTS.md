@@ -10,7 +10,7 @@
 - [x] **INST-01**: User can install a skill via `npx cc-templates --skill <name>` — downloads directory to `.claude/skills/<name>/`
 - [x] **INST-02**: User can install an agent via `npx cc-templates --agent <name>` — downloads `.md` file to `.claude/agents/<name>.md`
 - [x] **INST-03**: User can install a command via `npx cc-templates --command <name>` — downloads `.md` file to `.claude/commands/<name>.md`
-- [ ] **INST-04**: User can install a hook via `npx cc-templates --hook <name>` — fetches hook JSON and deep-merges into target `settings.json`
+- [x] **INST-04**: User can install a hook via `npx cc-templates --hook <name>` — fetches hook JSON and deep-merges into target `settings.json`
 - [x] **INST-05**: User can install to user-global `~/.claude/` instead of project-local `.claude/` via `--global` flag
 - [x] **INST-06**: User can force reinstall of an already-installed component via `--overwrite` / `--force` flag
 - [x] **INST-07**: User can point the CLI at a forked GitHub repo via `CC_TEMPLATES_REPO` environment variable
@@ -30,8 +30,8 @@
 - [ ] **SAFE-03**: User can preview what would be installed without any files being written via `--dry-run` flag
 - [ ] **SAFE-04**: User can run the CLI non-interactively in CI pipelines via `--yes` flag (skips all confirmation prompts)
 - [ ] **SAFE-05**: User sees a non-blocking warning at startup when running a stale npx-cached version (checked against npm registry)
-- [ ] **SAFE-06**: Hooks installer deep-merges new hook entries into existing `settings.json` without overwriting or removing any existing keys (atomic write via temp file + rename)
-- [ ] **SAFE-07**: Hook command strings containing `python3` are automatically replaced with `python` on Windows
+- [x] **SAFE-06**: Hooks installer deep-merges new hook entries into existing `settings.json` without overwriting or removing any existing keys (atomic write via temp file + rename)
+- [x] **SAFE-07**: Hook command strings containing `python3` are automatically replaced with `python` on Windows
 
 ### Discovery
 
@@ -77,7 +77,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INST-01 | Phase 2 | Complete |
 | INST-02 | Phase 2 | Complete |
 | INST-03 | Phase 2 | Complete |
-| INST-04 | Phase 2 | Pending |
+| INST-04 | Phase 2 | Complete |
 | INST-05 | Phase 2 | Complete |
 | INST-06 | Phase 2 | Complete |
 | INST-07 | Phase 2 | Complete |
@@ -91,8 +91,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SAFE-03 | Phase 4 | Pending |
 | SAFE-04 | Phase 2 | Pending |
 | SAFE-05 | Phase 4 | Pending |
-| SAFE-06 | Phase 2 | Pending |
-| SAFE-07 | Phase 2 | Pending |
+| SAFE-06 | Phase 2 | Complete |
+| SAFE-07 | Phase 2 | Complete |
 | DISC-01 | Phase 3 | Pending |
 | DISC-02 | Phase 3 | Pending |
 | DISC-03 | Phase 3 | Pending |
