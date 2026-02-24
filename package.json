@@ -10,7 +10,8 @@
     "bin/",
     "dist/",
     "components.json",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "node scripts/build-catalog.js && tsc",
@@ -29,18 +30,36 @@
     "write-file-atomic": "^7.0.0"
   },
   "keywords": [
-    "claude",
     "claude-code",
-    "components",
+    "anthropic",
+    "agents",
+    "hooks",
+    "skills",
     "cli"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthropics-community/cc-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anthropics-community/cc-templates/issues"
+  },
+  "homepage": "https://github.com/anthropics-community/cc-templates#readme",
+  "publishConfig": {
+    "provenance": true
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/npm": "13.1.4",
+    "@semantic-release/release-notes-generator": "^14.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.19.11",
     "@types/write-file-atomic": "^4.0.3",
     "eslint": "^10.0.2",
+    "semantic-release": "^24.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.56.1"
   }
