@@ -82,3 +82,17 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4
 | 2.1. TypeScript Migration (INSERTED) | v1.0 | Complete    | 2026-02-24 | 2026-02-24 |
 | 3. Discovery UX | 3/4 | In Progress|  | - |
 | 4. Polish + Publish | v1.0 | 0/TBD | Not started | - |
+| 5. NPM Publish | - | 1/5 | In Progress | - |
+
+### Phase 5: NPM Publish
+**Goal**: Make cc-templates publicly available and discoverable on npm — from a working local package to one that strangers can find, install, and trust. Includes package identity polish, public-facing README and docs, automated CI/CD release pipeline, and community scaffolding (license, issue templates, contributing guide) needed for an open-source launch.
+**Depends on**: Phase 4
+**Requirements**: PUB-01, PUB-02, PUB-03, PUB-04, PUB-05, PUB-06, PUB-07
+**Plans**: 5 plans
+
+Plans:
+- [x] 05-01-PLAN.md — package.json metadata polish + MIT LICENSE + semantic-release devDependencies
+- [ ] 05-02-PLAN.md — Rewrite README.md + create CONTRIBUTING.md
+- [ ] 05-03-PLAN.md — GitHub YAML issue templates + .releaserc.json
+- [ ] 05-04-PLAN.md — GitHub Actions release workflow + npm pack verification
+- [ ] 05-05-PLAN.md — First manual npm publish + OIDC trusted publishing setup + CI verification

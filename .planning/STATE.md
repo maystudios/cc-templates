@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** The fastest way to extend Claude Code with reusable, community-contributed components — one command, files in the right place.
-**Current focus:** Phase 3 — Discovery UX (Phase 2.1 TypeScript Migration COMPLETE)
+**Current focus:** Phase 5 — NPM Publish (1/5 plans complete)
 
 ## Current Position
 
-Phase: 03-discovery-ux
-Plan: 03-03 complete (3 of 5 plans done)
-Status: In progress — Phase 3 Discovery UX
-Last activity: 2026-02-24 — 03-03: Author attribution ('  by <author>') added to all four installer success lines; output.hint() removed from skill/agent/command
+Phase: 05-npm-publish
+Plan: 05-01 complete (1 of 5 plans done)
+Status: In progress — Phase 5 NPM Publish
+Last activity: 2026-02-24 — 05-01: package.json metadata (repository, bugs, homepage, publishConfig.provenance), MIT LICENSE, semantic-release + 4 plugins installed
 
 ## Performance Metrics
 
@@ -31,6 +31,7 @@ Last activity: 2026-02-24 — 03-03: Author attribution ('  by <author>') added 
 | 03-discovery-ux | 1 | 1 min | 1 min |
 | Phase 03-discovery-ux P01 | 1 | 2 tasks | 3 files |
 | Phase 03-discovery-ux P03 | 2 | 2 tasks | 4 files |
+| Phase 05-npm-publish P01 | 6min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -47,10 +48,12 @@ All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 miles
 - [Phase 03-01]: No confirmation step before install — immediate runInstall on Enter (locked decision)
 - [Phase 03-01]: @inquirer/prompts ^8.3.0 installed as production dependency for two-level interactive menu (DISC-01)
 - [Phase 03-discovery-ux]: Hook success message restructured to '<name> hook added to settings.json  by <author>' for installer consistency; output.hint() removed from skill/agent/command installers per Phase 3 no-hints decision
+- [05-01]: MIT license with 2026 copyright 'cc-templates contributors'; publishConfig.provenance=true for OIDC trusted publishing; @semantic-release/npm pinned to 13.1.4 (minimum OIDC version); @semantic-release/git omitted for simplicity; keywords exactly: claude-code, anthropic, agents, hooks, skills, cli
 
 ### Roadmap Evolution
 
 - Phase 2.1 inserted after Phase 2: TypeScript Migration with build system and ESLint (URGENT — architectural improvement before Discovery UX)
+- Phase 5 added: Wir möchten jetzt in der nächsten Phase das Ganze per NPM wirklich publischen, sodass andere Leute das wirklich jetzt nutzen können.
 
 ### Pending Todos
 
@@ -64,5 +67,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 03-03-PLAN.md — author attribution on all four installers, output.hint() removed from skill/agent/command, DISC-03 satisfied
+Stopped at: Completed 05-01-PLAN.md — package.json metadata polish, MIT LICENSE, semantic-release devDependencies installed, PUB-01 and PUB-04 satisfied
 Resume file: None
