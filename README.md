@@ -61,9 +61,6 @@ Installed skill video-download to .claude/skills/video-download/  by cc-template
 
 | Name | Description | Author |
 |------|-------------|--------|
-| `find-skills` | Helps users discover and install agent skills when they ask questions like "how do I do X" or "find a skill for X" | — |
-| `frontend-design` | Create distinctive, production-grade frontend interfaces with high design quality. Use when building web components, pages, dashboards, or React components | — |
-| `skill-creator` | Guide for creating effective skills. Use when you want to create or update a skill that extends Claude's capabilities | — |
 | `tech-product-landing` | Build production-grade landing pages for software/CLI tools and developer libraries. Dark theme, animations, tabbed docs | — |
 | `video-download` | Download videos from YouTube, Instagram, TikTok, and more via yt-dlp | cc-templates |
 | `video-fetch-and-summarize` | Download videos and generate AI summaries using Google Gemini | cc-templates |
