@@ -1,0 +1,29 @@
+{
+  "name": "cc-templates",
+  "version": "0.1.0",
+  "description": "Install Claude Code components with one command",
+  "type": "module",
+  "bin": {
+    "cc-templates": "./bin/index.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "components.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build-catalog.js",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0",
+    "js-yaml": "^4.1.1"
+  },
+  "keywords": ["claude", "claude-code", "components", "cli"],
+  "license": "MIT"
+}
