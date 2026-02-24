@@ -43,7 +43,14 @@ Plans:
   3. User requests a component that does not exist and sees a clear error message listing available components of that type
   4. User runs the installer against an already-installed component and sees a warning with the install aborted unless `--force` is passed
   5. User runs the installer in a CI pipeline with `--yes` flag and no interactive prompts appear
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Foundation modules: fetch.js URL builder, output.js chalk helpers, catalog.js validator, write-file-atomic dependency
+- [ ] 02-02-PLAN.md — Single-file installers: agent.js and command.js (raw.githubusercontent.com fetch pattern)
+- [ ] 02-03-PLAN.md — Skill directory installer: skill.js using GitHub Contents API recursive download
+- [ ] 02-04-PLAN.md — Hook installer: hook.js with array-append deep-merge and atomic write to settings.json
+- [ ] 02-05-PLAN.md — Orchestrator and CLI wiring: install.js multi-install dispatch, cli.js updated with all flags
 
 ### Phase 3: Discovery UX
 **Goal**: Users can discover and browse available components without knowing component names in advance
@@ -73,6 +80,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Scaffold | 1/1 | Complete | 2026-02-24 |
-| 2. Core Installer | 0/TBD | Not started | - |
+| 2. Core Installer | 0/5 | Planned | - |
 | 3. Discovery UX | 0/TBD | Not started | - |
 | 4. Polish + Publish | 0/TBD | Not started | - |
