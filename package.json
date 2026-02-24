@@ -15,6 +15,7 @@
   "scripts": {
     "build": "node scripts/build-catalog.js && tsc",
     "lint": "eslint src/",
+    "test": "node --test test/smoke.test.js",
     "prepublishOnly": "npm run build"
   },
   "engines": {
