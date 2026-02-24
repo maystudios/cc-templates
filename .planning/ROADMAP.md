@@ -12,7 +12,7 @@ cc-templates ships as a minimal npm CLI that installs Claude Code components fro
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Scaffold** - Register npm name, establish correct package structure, generate static component catalog
+- [x] **Phase 1: Scaffold** - Register npm name, establish correct package structure, generate static component catalog
 - [ ] **Phase 2: Core Installer** - All four component types install end-to-end with full safety guarantees
 - [ ] **Phase 3: Discovery UX** - Interactive menu and catalog listing bring components to the surface
 - [ ] **Phase 4: Polish + Publish** - Dry-run flag, stale-version check, Windows CI, first public npm publish
@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01-PLAN.md — Package scaffold, CLI entry point, component library seed, and catalog generation
+- [x] 01-01-PLAN.md — Package scaffold, CLI entry point, component library seed, and catalog generation
 
 ### Phase 2: Core Installer
 **Goal**: Users can install any of the four component types via CLI flags with safety guarantees — no data loss, no silent overwrites, no Windows failures
@@ -72,7 +72,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Scaffold | 0/1 | Not started | - |
+| 1. Scaffold | 1/1 | Complete | 2026-02-24 |
 | 2. Core Installer | 0/TBD | Not started | - |
 | 3. Discovery UX | 0/TBD | Not started | - |
 | 4. Polish + Publish | 0/TBD | Not started | - |

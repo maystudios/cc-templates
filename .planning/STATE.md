@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 1 of 4 (Scaffold)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-02-24 — Roadmap created; ready to plan Phase 1
+Plan: 1 of 1 in current phase (Phase 1 complete)
+Status: Phase 1 complete — ready for Phase 2 (Core Installer)
+Last activity: 2026-02-24 — Plan 01-01 executed; npm scaffold + component library created
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██░░░░░░░░] 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: —
+- Total plans completed: 1
+- Average duration: 2 min
+- Total execution time: 2 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-scaffold | 1 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: —
+- Last 5 plans: 01-01 (2 min)
 - Trend: —
 
 *Updated after each plan completion*
@@ -45,18 +45,22 @@ Recent decisions affecting current work:
 - [Pre-phase]: Register `cc-templates` npm name before any public announcement — name squatting is non-recoverable
 - [Pre-phase]: Use CommonJS (no build step); pin chalk@4.1.2 and ora@7.x to avoid ESM/CJS friction
 - [Pre-phase]: Ship pre-generated `components.json` inside npm package for instant offline listing
+- [01-01]: cc-templates npm name confirmed available (npm view returned 404) — safe to register/publish
+- [01-01]: ESM-only package (type:module) with js-yaml CJS-from-ESM dynamic import and createRequire fallback
+- [01-01]: components/ directory excluded from npm files — stays on GitHub for runtime fetch; components.json included for offline listing
+- [01-01]: build-catalog.js uses getMainFile() helper to support both directory skills and future flat-file hooks/commands
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
 - [Research]: `settings.json` hooks schema is MEDIUM confidence — verify against official Anthropic docs before writing hooks merge logic in Phase 2
-- [Research]: Verify `cc-templates` npm name is still available and register it as first action of Phase 1
+- [RESOLVED 01-01]: `cc-templates` npm name confirmed available
 
 ## Session Continuity
 
-Last session: 2026-02-24
-Stopped at: Roadmap written; STATE.md initialized; REQUIREMENTS.md traceability updated
+Last session: 2026-02-24T11:58:10Z
+Stopped at: Completed 01-01-PLAN.md — npm scaffold and component library created, components.json generated
 Resume file: None

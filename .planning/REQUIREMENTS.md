@@ -20,8 +20,8 @@
 - [ ] **COMP-01**: `video-download` skill is available to install (downloads videos from YouTube, Instagram, TikTok, etc. via yt-dlp)
 - [ ] **COMP-02**: `video-fetch-and-summarize` skill is available to install (downloads videos + generates Gemini summaries)
 - [ ] **COMP-03**: `video-summarizer` skill is available to install (summarizes existing MP4 files via Gemini)
-- [ ] **COMP-04**: All component files include YAML frontmatter with `name`, `description`, and optional `author` fields
-- [ ] **COMP-05**: Pre-generated `components.json` catalog is shipped inside the npm package for offline/instant listing
+- [x] **COMP-04**: All component files include YAML frontmatter with `name`, `description`, and optional `author` fields
+- [x] **COMP-05**: Pre-generated `components.json` catalog is shipped inside the npm package for offline/instant listing
 
 ### Safety & UX
 
@@ -84,8 +84,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | COMP-01 | Phase 2 | Pending |
 | COMP-02 | Phase 2 | Pending |
 | COMP-03 | Phase 2 | Pending |
-| COMP-04 | Phase 1 | Pending |
-| COMP-05 | Phase 1 | Pending |
+| COMP-04 | Phase 1 | Complete |
+| COMP-05 | Phase 1 | Complete |
 | SAFE-01 | Phase 2 | Pending |
 | SAFE-02 | Phase 2 | Pending |
 | SAFE-03 | Phase 4 | Pending |
@@ -104,4 +104,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after roadmap creation*
+*Last updated: 2026-02-24 after 01-01 execution (COMP-04, COMP-05 complete)*
