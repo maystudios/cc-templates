@@ -5,6 +5,9 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runInstall } from './install.js';
 import type { InstallOptions } from './types.js';
+import { runMenu } from './menu.js';
+import { printList } from './list.js';
+import { ExitPromptError } from '@inquirer/core';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf8')) as { version: string };
@@ -53,10 +56,8 @@ Examples:
 
   const opts = program.opts<InstallOptions>();
 
-  // --list: Phase 3 will implement the full interactive/catalog listing.
-  // For Phase 2, print a stub message so the flag doesn't silently fail.
   if (opts.list) {
-    console.log('[Phase 3] --list will show all available components. Coming soon.');
+    printList();
     return;
   }
 
@@ -73,6 +74,19 @@ Examples:
     return;
   }
 
-  // No flags: show help (Phase 3 will replace this with interactive menu — DISC-01)
-  program.help();
+  // No flags: launch interactive menu (DISC-01)
+  if (!process.stdin.isTTY) {
+    console.error('Interactive menu requires a terminal. Run with --help for usage.');
+    process.exit(1);
+  }
+  try {
+    await runMenu();
+  } catch (err) {
+    if (err instanceof ExitPromptError) {
+      // User pressed Ctrl+C or Escape — clean exit, no message (locked decision)
+      process.exitCode = 0;
+      return;
+    }
+    throw err; // unexpected error — surface it
+  }
 }
