@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** The fastest way to extend Claude Code with reusable, community-contributed components — one command, files in the right place.
-**Current focus:** Phase 5 — NPM Publish (2/5 plans complete)
+**Current focus:** Phase 5 — NPM Publish (3/5 plans complete)
 
 ## Current Position
 
 Phase: 05-npm-publish
-Plan: 05-02 complete (2 of 5 plans done)
+Plan: 05-03 complete (3 of 5 plans done)
 Status: In progress — Phase 5 NPM Publish
-Last activity: 2026-02-24 — 05-02: README.md rewritten for public npm audience, CONTRIBUTING.md created with dev setup + template guide + conventional commits
+Last activity: 2026-02-24 — 05-03: GitHub YAML issue templates created, .releaserc.json configured with four-plugin semantic-release stack
 
 ## Performance Metrics
 
@@ -33,6 +33,7 @@ Last activity: 2026-02-24 — 05-02: README.md rewritten for public npm audience
 | Phase 03-discovery-ux P03 | 2 | 2 tasks | 4 files |
 | Phase 05-npm-publish P01 | 6min | 2 tasks | 3 files |
 | Phase 05-npm-publish P02 | 4min | 2 tasks | 2 files |
+| Phase 05-npm-publish P03 | 3min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -52,6 +53,7 @@ All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 miles
 - [05-01]: MIT license with 2026 copyright 'cc-templates contributors'; publishConfig.provenance=true for OIDC trusted publishing; @semantic-release/npm pinned to 13.1.4 (minimum OIDC version); @semantic-release/git omitted for simplicity; keywords exactly: claude-code, anthropic, agents, hooks, skills, cli
 - [Phase 05-02]: README targets developers already using Claude Code — no Claude Code onboarding, leads with value and Quick Start
 - [Phase 05-02]: CONTRIBUTING.md ties Conventional Commits explicitly to semantic-release version bumps (feat=minor, fix=patch, docs/chore=none)
+- [05-03]: @semantic-release/git omitted — version in package.json on main may lag but semantic-release computes correct next version from git tags; @semantic-release/changelog omitted — changelog lives in GitHub Releases not committed file; blank_issues_enabled: false forces structured YAML forms
 
 ### Roadmap Evolution
 
@@ -70,5 +72,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 05-02-PLAN.md — README.md rewritten, CONTRIBUTING.md created, PUB-02 and PUB-06 satisfied
+Stopped at: Completed 05-03-PLAN.md — GitHub YAML issue templates created, .releaserc.json configured, PUB-03 and PUB-05 satisfied
 Resume file: None
