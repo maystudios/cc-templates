@@ -29,6 +29,8 @@ Last activity: 2026-02-24 — 03-02: src/list.ts created, TTY-aware grouped cata
 | 02-core-installer | 5 | 10 min | 2 min |
 | 02.1-typescript-migration | 5 | 11 min | 2.2 min |
 | 03-discovery-ux | 1 | 1 min | 1 min |
+| Phase 03-discovery-ux P01 | 1 | 2 tasks | 3 files |
+| Phase 03-discovery-ux P03 | 2 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -41,6 +43,10 @@ All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 miles
 - [02.1-04]: plan array typed as Array<{ type: ComponentType; name: string }> (not string) to satisfy validateName(ComponentType, string) signature in catalog.ts; (err as Error).message cast used in catch blocks
 - [02.1-05]: program.opts<InstallOptions>() for typed commander options; bin/index.js kept as plain .js shim pointing to dist/; node:test built-in used for smoke tests (no extra devDependency)
 - [03-02]: isTTY explicit guard used for structural routing; chalk auto-suppresses ANSI independently; TYPES omits mcp (no v0.1 entries); TYPE_LABELS includes mcp key for Record<ComponentType,string> type completeness
+- [Phase 03-01]: ExitPromptError not caught in menu.ts — delegated to cli.ts as single catch point
+- [Phase 03-01]: No confirmation step before install — immediate runInstall on Enter (locked decision)
+- [Phase 03-01]: @inquirer/prompts ^8.3.0 installed as production dependency for two-level interactive menu (DISC-01)
+- [Phase 03-discovery-ux]: Hook success message restructured to '<name> hook added to settings.json  by <author>' for installer consistency; output.hint() removed from skill/agent/command installers per Phase 3 no-hints decision
 
 ### Roadmap Evolution
 
@@ -58,5 +64,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 03-02-PLAN.md — src/list.ts created with TTY-aware grouped catalog listing, printList() exports cleanly, zero TS errors
+Stopped at: Completed 03-01-PLAN.md — @inquirer/prompts ^8.3.0 installed, src/menu.ts created with two-level interactive menu (DISC-01), TypeScript builds cleanly
 Resume file: None
