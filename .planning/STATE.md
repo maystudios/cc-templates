@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** The fastest way to extend Claude Code with reusable, community-contributed components — one command, files in the right place.
-**Current focus:** Phase 5 — NPM Publish (3/5 plans complete)
+**Current focus:** Phase 5 — NPM Publish (4/5 plans complete)
 
 ## Current Position
 
 Phase: 05-npm-publish
-Plan: 05-03 complete (3 of 5 plans done)
+Plan: 05-04 complete (4 of 5 plans done)
 Status: In progress — Phase 5 NPM Publish
-Last activity: 2026-02-24 — 05-03: GitHub YAML issue templates created, .releaserc.json configured with four-plugin semantic-release stack
+Last activity: 2026-02-24 — 05-04: GitHub Actions release workflow created (.github/workflows/release.yml), npm pack --dry-run confirmed 41-file package set (12.9 kB)
 
 ## Performance Metrics
 
@@ -34,6 +34,7 @@ Last activity: 2026-02-24 — 05-03: GitHub YAML issue templates created, .relea
 | Phase 05-npm-publish P01 | 6min | 2 tasks | 3 files |
 | Phase 05-npm-publish P02 | 4min | 2 tasks | 2 files |
 | Phase 05-npm-publish P03 | 3min | 2 tasks | 4 files |
+| Phase 05-npm-publish P04 | 2 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -54,6 +55,7 @@ All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 miles
 - [Phase 05-02]: README targets developers already using Claude Code — no Claude Code onboarding, leads with value and Quick Start
 - [Phase 05-02]: CONTRIBUTING.md ties Conventional Commits explicitly to semantic-release version bumps (feat=minor, fix=patch, docs/chore=none)
 - [05-03]: @semantic-release/git omitted — version in package.json on main may lag but semantic-release computes correct next version from git tags; @semantic-release/changelog omitted — changelog lives in GitHub Releases not committed file; blank_issues_enabled: false forces structured YAML forms
+- [Phase 05-npm-publish]: fetch-depth: 0 required on release checkout; no registry-url avoids EINVALIDNPMTOKEN; id-token: write enables OIDC trusted publishing; node-version: '22' pinned to match engines
 
 ### Roadmap Evolution
 
@@ -72,5 +74,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 05-03-PLAN.md — GitHub YAML issue templates created, .releaserc.json configured, PUB-03 and PUB-05 satisfied
+Stopped at: Completed 05-04-PLAN.md — GitHub Actions release workflow created, npm pack verified 41-file package set
 Resume file: None
