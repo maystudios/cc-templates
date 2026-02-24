@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** The fastest way to extend Claude Code with reusable, community-contributed components — one command, files in the right place.
-**Current focus:** Phase 5 — NPM Publish (4/5 plans complete)
+**Current focus:** Phase 5 — NPM Publish (5/5 plans in progress — stopped at checkpoint:human-action)
 
 ## Current Position
 
 Phase: 05-npm-publish
-Plan: 05-04 complete (4 of 5 plans done)
-Status: In progress — Phase 5 NPM Publish
-Last activity: 2026-02-24 — 05-04: GitHub Actions release workflow created (.github/workflows/release.yml), npm pack --dry-run confirmed 41-file package set (12.9 kB)
+Plan: 05-05 in progress (1/3 tasks complete — stopped at checkpoint:human-action)
+Status: BLOCKED — awaiting user action: GitHub repo creation, manual first npm publish, OIDC configuration
+Last activity: 2026-02-24 — 05-05: Pre-publish build verified green (build + 5/5 tests + npm pack --dry-run), stopped at checkpoint:human-action for manual npm publish
 
 ## Performance Metrics
 
@@ -68,11 +68,12 @@ None.
 
 ### Blockers/Concerns
 
-- `anthropics-community/cc-templates` GitHub repo not yet created — skill end-to-end install not verifiable until published
+- ACTIVE: 05-05 checkpoint:human-action — user must create GitHub repo, push code, do manual first npm publish with granular token, configure OIDC trusted publishing, verify CI green
 - `settings.json` hooks schema: MEDIUM confidence — no blocking issues found in Phase 2 implementation
 
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 05-04-PLAN.md — GitHub Actions release workflow created, npm pack verified 41-file package set
+Stopped at: 05-05 Task 2 checkpoint:human-action — pre-publish build verified green, awaiting manual GitHub/npm setup
+Resume signal: User types "published" to confirm 0.1.0 is live on npm and OIDC is configured
 Resume file: None
