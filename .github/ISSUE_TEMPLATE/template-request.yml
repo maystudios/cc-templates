@@ -1,0 +1,42 @@
+name: Template Request
+description: Request a new component template (skill, agent, hook, or command)
+labels: ["template-request"]
+body:
+  - type: markdown
+    attributes:
+      value: "Want to request a new template? Describe what you need below. Even better — consider contributing it yourself! See [CONTRIBUTING.md](../CONTRIBUTING.md)."
+
+  - type: dropdown
+    id: component-type
+    attributes:
+      label: Component type
+      options:
+        - Skill
+        - Agent
+        - Hook
+        - Command
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Suggested name
+      placeholder: "e.g. docker-debugger, git-summarizer"
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: What would this template do?
+      description: Describe the use case and what problem it solves for Claude Code users.
+    validations:
+      required: true
+
+  - type: textarea
+    id: interested-in-contributing
+    attributes:
+      label: Would you like to contribute this template?
+      description: Let us know if you'd like to build it — we can help guide you through the process.
+      placeholder: "Yes / No / Maybe with some guidance"

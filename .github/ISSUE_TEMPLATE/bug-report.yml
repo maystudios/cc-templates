@@ -1,0 +1,52 @@
+name: Bug Report
+description: Something is not working as expected
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for taking the time to report a bug. Fill out the fields below to help us investigate."
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug — what you expected vs what actually happened.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run `npx cc-templates --skill video-download`
+        2. See error...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: cc-templates version
+      placeholder: "e.g. 0.1.0 (run: npx cc-templates --version)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - macOS
+        - Windows
+        - Linux
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js version
+      placeholder: "e.g. 22.14.0 (run: node --version)"
+    validations:
+      required: true
