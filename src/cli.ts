@@ -1,14 +1,15 @@
-// src/cli.js
+// src/cli.ts
 import { Command } from 'commander';
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runInstall } from './install.js';
+import type { InstallOptions } from './types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf8'));
+const pkg = JSON.parse(readFileSync(join(__dirname, '../package.json'), 'utf8')) as { version: string };
 
-export async function run() {
+export async function run(): Promise<void> {
   const program = new Command();
 
   program
@@ -50,7 +51,7 @@ Examples:
 
   program.parse(process.argv);
 
-  const opts = program.opts();
+  const opts = program.opts<InstallOptions>();
 
   // --list: Phase 3 will implement the full interactive/catalog listing.
   // For Phase 2, print a stub message so the flag doesn't silently fail.

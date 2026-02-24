@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { run } from '../src/cli.js';
+import { run } from '../dist/cli.js';
 
 run().catch(err => {
   console.error(err.message);
