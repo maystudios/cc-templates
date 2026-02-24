@@ -5,21 +5,21 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** The fastest way to extend Claude Code with reusable, community-contributed components — one command, files in the right place.
-**Current focus:** Phase 2.1 — TypeScript Migration (inserted before Phase 3)
+**Current focus:** Phase 3 — Discovery UX (Phase 2.1 TypeScript Migration COMPLETE)
 
 ## Current Position
 
-Phase: 2.1 of v1.0 (TypeScript Migration — INSERTED)
-Plan: 02.1-04 complete (4 of 5 plans done)
-Status: In Progress — Plan 04 complete, proceed to Plan 05
-Last activity: 2026-02-24 — 02.1-04: install.ts migrated to TypeScript (install.js deleted)
+Phase: 2.1 of v1.0 (TypeScript Migration — COMPLETE)
+Plan: 02.1-05 complete (5 of 5 plans done) — Phase 2.1 FINISHED
+Status: Phase 2.1 Complete — proceed to Phase 3
+Last activity: 2026-02-24 — 02.1-05: cli.ts migrated, bin updated to dist/, smoke tests pass — Phase 2.1 TypeScript migration 100% complete
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
+- Total plans completed: 11
 - Average duration: 2 min
-- Total execution time: 21 min
+- Total execution time: 23 min
 
 **By Phase:**
 
@@ -27,7 +27,7 @@ Last activity: 2026-02-24 — 02.1-04: install.ts migrated to TypeScript (instal
 |-------|-------|-------|----------|
 | 01-scaffold | 1 | 2 min | 2 min |
 | 02-core-installer | 5 | 10 min | 2 min |
-| 02.1-typescript-migration | 4 | 9 min | 2.3 min |
+| 02.1-typescript-migration | 5 | 11 min | 2.2 min |
 
 ## Accumulated Context
 
@@ -38,6 +38,7 @@ All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 miles
 - [02.1-02]: All relative imports use .js extension per NodeNext ESM resolution; src/types.ts is single source of truth for shared interfaces; JSDoc @param/@returns removed in favour of TypeScript signatures
 - [02.1-03]: write-file-atomic typed via inline call-signature (not import type) due to export= CJS declaration; hookData and settings JSON typed as Record<string,any> for dynamic JSON shapes
 - [02.1-04]: plan array typed as Array<{ type: ComponentType; name: string }> (not string) to satisfy validateName(ComponentType, string) signature in catalog.ts; (err as Error).message cast used in catch blocks
+- [02.1-05]: program.opts<InstallOptions>() for typed commander options; bin/index.js kept as plain .js shim pointing to dist/; node:test built-in used for smoke tests (no extra devDependency)
 
 ### Roadmap Evolution
 
@@ -55,5 +56,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 02.1-04-PLAN.md — install.ts migrated to TypeScript with InstallOptions/ComponentType types (old install.js deleted)
+Stopped at: Completed 02.1-05-PLAN.md — cli.ts migrated to TypeScript, bin/index.js updated to dist/, smoke tests created and passing, Phase 2.1 TypeScript migration 100% complete
 Resume file: None
