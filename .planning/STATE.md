@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 2.1 of v1.0 (TypeScript Migration — INSERTED)
-Plan: 02.1-02 complete (2 of 5 plans done)
-Status: In Progress — Plan 02 complete, proceed to Plan 03
-Last activity: 2026-02-24 — 02.1-02: Shared types and catalog/output/fetch modules migrated to TypeScript
+Plan: 02.1-03 complete (3 of 5 plans done)
+Status: In Progress — Plan 03 complete, proceed to Plan 04
+Last activity: 2026-02-24 — 02.1-03: Four installer files migrated to TypeScript (agent, command, hook, skill)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 2 min
-- Total execution time: 17 min
+- Total execution time: 19 min
 
 **By Phase:**
 
@@ -27,7 +27,7 @@ Last activity: 2026-02-24 — 02.1-02: Shared types and catalog/output/fetch mod
 |-------|-------|-------|----------|
 | 01-scaffold | 1 | 2 min | 2 min |
 | 02-core-installer | 5 | 10 min | 2 min |
-| 02.1-typescript-migration | 2 | 5 min | 2.5 min |
+| 02.1-typescript-migration | 3 | 7 min | 2.3 min |
 
 ## Accumulated Context
 
@@ -36,6 +36,7 @@ Last activity: 2026-02-24 — 02.1-02: Shared types and catalog/output/fetch mod
 All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 milestone).
 - [Phase 02.1-typescript-migration]: Used tsc as sole build tool (no esbuild/tsup); eslint.config.js flat config with typescript-eslint; build script chains catalog+tsc; engines >=22
 - [02.1-02]: All relative imports use .js extension per NodeNext ESM resolution; src/types.ts is single source of truth for shared interfaces; JSDoc @param/@returns removed in favour of TypeScript signatures
+- [02.1-03]: write-file-atomic typed via inline call-signature (not import type) due to export= CJS declaration; hookData and settings JSON typed as Record<string,any> for dynamic JSON shapes
 
 ### Roadmap Evolution
 
@@ -53,5 +54,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 02.1-02-PLAN.md — src/types.ts + catalog/output/fetch migrated to TypeScript (old .js files deleted)
+Stopped at: Completed 02.1-03-PLAN.md — agent.ts, command.ts, hook.ts, skill.ts migrated to TypeScript (old .js files deleted)
 Resume file: None

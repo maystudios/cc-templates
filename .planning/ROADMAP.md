@@ -38,9 +38,9 @@ See archive: `.planning/milestones/v0.1-ROADMAP.md`
 **Plans**: 5 plans
 
 Plans:
-- [ ] 02.1-01-PLAN.md — Install devDependencies + tsconfig.json + eslint.config.js + package.json updates
-- [ ] 02.1-02-PLAN.md — Create src/types.ts + migrate catalog.ts, output.ts, fetch.ts
-- [ ] 02.1-03-PLAN.md — Migrate src/installers/*.ts (agent, command, hook, skill)
+- [x] 02.1-01-PLAN.md — Install devDependencies + tsconfig.json + eslint.config.js + package.json updates
+- [x] 02.1-02-PLAN.md — Create src/types.ts + migrate catalog.ts, output.ts, fetch.ts
+- [x] 02.1-03-PLAN.md — Migrate src/installers/*.ts (agent, command, hook, skill)
 - [ ] 02.1-04-PLAN.md — Migrate src/install.ts
 - [ ] 02.1-05-PLAN.md — Migrate src/cli.ts + update bin/index.js + smoke tests + full build verification
 
@@ -73,6 +73,6 @@ Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4
 |-------|-----------|----------------|--------|-----------|
 | 1. Scaffold | v0.1 | 1/1 | Complete | 2026-02-24 |
 | 2. Core Installer | v0.1 | 5/5 | Complete | 2026-02-24 |
-| 2.1. TypeScript Migration (INSERTED) | 1/5 | In Progress|  | - |
+| 2.1. TypeScript Migration (INSERTED) | v1.0 | 3/5 | In Progress | - |
 | 3. Discovery UX | v1.0 | 0/TBD | Not started | - |
 | 4. Polish + Publish | v1.0 | 0/TBD | Not started | - |
