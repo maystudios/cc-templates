@@ -1,7 +1,7 @@
 ---
 name: video-fetch-and-summarize
 description: Download videos and generate AI summaries using Google Gemini
-author: cc-templates
+author: maystudios
 version: 1.0.0
 tags:
   - video

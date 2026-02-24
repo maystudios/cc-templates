@@ -1,7 +1,7 @@
 ---
 name: video-summarizer
 description: Generate AI summaries of existing MP4 files using Google Gemini
-author: cc-templates
+author: maystudios
 version: 1.0.0
 tags:
   - video

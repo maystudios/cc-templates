@@ -1,7 +1,7 @@
 ---
 name: video-download
 description: Download videos from YouTube, Instagram, TikTok, and more via yt-dlp
-author: cc-templates
+author: maystudios
 version: 1.0.0
 tags:
   - video
