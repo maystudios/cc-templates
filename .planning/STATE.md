@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 2.1 of v1.0 (TypeScript Migration — INSERTED)
-Plan: 02.1-01 complete (1 of 5 plans done)
-Status: In Progress — Plan 01 complete, proceed to Plan 02
-Last activity: 2026-02-24 — 02.1-01: TypeScript build foundation installed (tsconfig, eslint.config.js, devDeps)
+Plan: 02.1-02 complete (2 of 5 plans done)
+Status: In Progress — Plan 02 complete, proceed to Plan 03
+Last activity: 2026-02-24 — 02.1-02: Shared types and catalog/output/fetch modules migrated to TypeScript
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: 2 min
-- Total execution time: 14 min
+- Total execution time: 17 min
 
 **By Phase:**
 
@@ -27,7 +27,7 @@ Last activity: 2026-02-24 — 02.1-01: TypeScript build foundation installed (ts
 |-------|-------|-------|----------|
 | 01-scaffold | 1 | 2 min | 2 min |
 | 02-core-installer | 5 | 10 min | 2 min |
-| 02.1-typescript-migration | 1 | 2 min | 2 min |
+| 02.1-typescript-migration | 2 | 5 min | 2.5 min |
 
 ## Accumulated Context
 
@@ -35,6 +35,7 @@ Last activity: 2026-02-24 — 02.1-01: TypeScript build foundation installed (ts
 
 All decisions logged in PROJECT.md Key Decisions table (updated after v0.1 milestone).
 - [Phase 02.1-typescript-migration]: Used tsc as sole build tool (no esbuild/tsup); eslint.config.js flat config with typescript-eslint; build script chains catalog+tsc; engines >=22
+- [02.1-02]: All relative imports use .js extension per NodeNext ESM resolution; src/types.ts is single source of truth for shared interfaces; JSDoc @param/@returns removed in favour of TypeScript signatures
 
 ### Roadmap Evolution
 
@@ -52,5 +53,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 02.1-01-PLAN.md — TypeScript build foundation (tsconfig.json, eslint.config.js, devDeps, package.json updates)
+Stopped at: Completed 02.1-02-PLAN.md — src/types.ts + catalog/output/fetch migrated to TypeScript (old .js files deleted)
 Resume file: None
