@@ -10,6 +10,8 @@ Install Claude Code components — skills, agents, hooks, and commands — with 
 
 ## Quick Start
 
+### via npx
+
 Run the interactive menu — pick a component type, pick a component, done:
 
 ```bash
@@ -23,10 +25,10 @@ npx cc-templates
   Hook
   Command
 ? Which skill? (Use arrow keys)
+  tech-product-landing
   video-download
   video-fetch-and-summarize
-  video-summarizer
-> video-download
+> video-summarizer
 
 Installed skill video-download to .claude/skills/video-download/  by cc-templates
 ```
@@ -37,8 +39,15 @@ Install directly without the menu:
 npx cc-templates --skill video-download
 ```
 
-```
-Installed skill video-download to .claude/skills/video-download/  by cc-templates
+### via skills.sh
+
+```bash
+# Install all skills
+npx skills add maystudios/cc-templates
+
+# Install a specific skill
+npx skills add maystudios/cc-templates --skill video-download
+npx skills add maystudios/cc-templates --skill tech-product-landing
 ```
 
 ---
@@ -59,12 +68,12 @@ Installed skill video-download to .claude/skills/video-download/  by cc-template
 
 ### Skills
 
-| Name | Description | Author |
-|------|-------------|--------|
-| `tech-product-landing` | Build production-grade landing pages for software/CLI tools and developer libraries. Dark theme, animations, tabbed docs | — |
-| `video-download` | Download videos from YouTube, Instagram, TikTok, and more via yt-dlp | cc-templates |
-| `video-fetch-and-summarize` | Download videos and generate AI summaries using Google Gemini | cc-templates |
-| `video-summarizer` | Generate AI summaries of existing MP4 files using Google Gemini | cc-templates |
+| Name | Description | Author | Requires |
+|------|-------------|--------|----------|
+| `tech-product-landing` | Build production-grade landing pages for software/CLI tools and developer libraries. Dark theme, framer-motion animations, tabbed docs. Stack: Vite + React + TypeScript + Tailwind v4 | maystudios | node, npm |
+| `video-download` | Download videos from YouTube, Instagram, TikTok, and 1000+ platforms via yt-dlp | cc-templates | yt-dlp |
+| `video-fetch-and-summarize` | Download videos and generate structured AI summaries using Google Gemini | cc-templates | yt-dlp, GEMINI_API_KEY |
+| `video-summarizer` | Generate AI summaries of existing MP4 files using Google Gemini | cc-templates | GEMINI_API_KEY |
 
 ### Agents, Hooks, Commands
 
@@ -72,7 +81,7 @@ No entries yet — the catalog grows via community contributions. See [CONTRIBUT
 
 ---
 
-## All Commands
+## All CLI Commands
 
 ```bash
 npx cc-templates                          # Interactive menu
