@@ -13,7 +13,7 @@ cc-templates ships as a minimal npm CLI that installs Claude Code components fro
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Scaffold** - Register npm name, establish correct package structure, generate static component catalog
-- [ ] **Phase 2: Core Installer** - All four component types install end-to-end with full safety guarantees
+- [x] **Phase 2: Core Installer** - All four component types install end-to-end with full safety guarantees
 - [ ] **Phase 3: Discovery UX** - Interactive menu and catalog listing bring components to the surface
 - [ ] **Phase 4: Polish + Publish** - Dry-run flag, stale-version check, Windows CI, first public npm publish
 
@@ -48,9 +48,9 @@ Plans:
 Plans:
 - [x] 02-01-PLAN.md — Foundation modules: fetch.js URL builder, output.js chalk helpers, catalog.js validator, write-file-atomic dependency
 - [x] 02-02-PLAN.md — Single-file installers: agent.js and command.js (raw.githubusercontent.com fetch pattern)
-- [ ] 02-03-PLAN.md — Skill directory installer: skill.js using GitHub Contents API recursive download
-- [ ] 02-04-PLAN.md — Hook installer: hook.js with array-append deep-merge and atomic write to settings.json
-- [ ] 02-05-PLAN.md — Orchestrator and CLI wiring: install.js multi-install dispatch, cli.js updated with all flags
+- [x] 02-03-PLAN.md — Skill directory installer: skill.js using GitHub Contents API recursive download
+- [x] 02-04-PLAN.md — Hook installer: hook.js with array-append deep-merge and atomic write to settings.json
+- [x] 02-05-PLAN.md — Orchestrator and CLI wiring: install.js multi-install dispatch, cli.js updated with all flags
 
 ### Phase 3: Discovery UX
 **Goal**: Users can discover and browse available components without knowing component names in advance
@@ -80,6 +80,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Scaffold | 1/1 | Complete | 2026-02-24 |
-| 2. Core Installer | 4/5 | In Progress|  |
+| 2. Core Installer | 5/5 | Complete | 2026-02-24 |
 | 3. Discovery UX | 0/TBD | Not started | - |
 | 4. Polish + Publish | 0/TBD | Not started | - |
