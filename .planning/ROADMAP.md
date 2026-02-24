@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ **v0.1 Core Installer** — Phases 1–2 (shipped 2026-02-24)
-- 📋 **v1.0 MVP** — Phases 3–4 (planned)
+- 🚧 **v1.0 MVP** — Phases 2.1, 3–4 (in progress)
 
 ## Phases
 
@@ -17,12 +17,32 @@ See archive: `.planning/milestones/v0.1-ROADMAP.md`
 
 </details>
 
-### 📋 v1.0 MVP (Planned)
+### 🚧 v1.0 MVP (In Progress)
 
+- [ ] **Phase 2.1: TypeScript Migration** (INSERTED) - Convert codebase to TypeScript with build pipeline and ESLint
 - [ ] **Phase 3: Discovery UX** - Interactive menu and catalog listing bring components to the surface
 - [ ] **Phase 4: Polish + Publish** - Dry-run flag, stale-version check, Windows CI, first public npm publish
 
 ## Phase Details
+
+### Phase 2.1: TypeScript Migration (INSERTED)
+**Goal**: Convert the entire codebase from plain JavaScript to TypeScript with a proper build pipeline (tsc or esbuild), ESLint with TypeScript rules, and strict type checking — delivering better type safety, IDE completions, and code quality enforcement before Discovery UX work begins
+**Depends on**: Phase 2
+**Requirements**: None (architectural improvement — enables better quality on all future phases)
+**Success Criteria** (what must be TRUE):
+  1. All source files (`src/**`) are `.ts` files; `npm run build` emits working `.js` to `dist/`
+  2. `bin/index.js` invokes the compiled output; `npx cc-templates --help` still works
+  3. ESLint with TypeScript rules passes with zero errors on all source files
+  4. `npm test` (or equivalent) passes — all existing behaviors verified unchanged
+  5. `npm pack --dry-run` lists only the correct files (dist/, components.json, package.json, README)
+**Plans**: 5 plans
+
+Plans:
+- [ ] 02.1-01-PLAN.md — Install devDependencies + tsconfig.json + eslint.config.js + package.json updates
+- [ ] 02.1-02-PLAN.md — Create src/types.ts + migrate catalog.ts, output.ts, fetch.ts
+- [ ] 02.1-03-PLAN.md — Migrate src/installers/*.ts (agent, command, hook, skill)
+- [ ] 02.1-04-PLAN.md — Migrate src/install.ts
+- [ ] 02.1-05-PLAN.md — Migrate src/cli.ts + update bin/index.js + smoke tests + full build verification
 
 ### Phase 3: Discovery UX
 **Goal**: Users can discover and browse available components without knowing component names in advance
@@ -47,11 +67,12 @@ See archive: `.planning/milestones/v0.1-ROADMAP.md`
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+Phases execute in numeric order: 1 → 2 → 2.1 → 3 → 4
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1. Scaffold | v0.1 | 1/1 | Complete | 2026-02-24 |
 | 2. Core Installer | v0.1 | 5/5 | Complete | 2026-02-24 |
+| 2.1. TypeScript Migration (INSERTED) | v1.0 | 0/5 | Not started | - |
 | 3. Discovery UX | v1.0 | 0/TBD | Not started | - |
 | 4. Polish + Publish | v1.0 | 0/TBD | Not started | - |
