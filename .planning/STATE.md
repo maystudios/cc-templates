@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 03-discovery-ux
-Plan: 03-02 complete (2 of 5 plans done)
+Plan: 03-03 complete (3 of 5 plans done)
 Status: In progress — Phase 3 Discovery UX
-Last activity: 2026-02-24 — 03-02: src/list.ts created, TTY-aware grouped catalog listing with chalk, printList() exports cleanly
+Last activity: 2026-02-24 — 03-03: Author attribution ('  by <author>') added to all four installer success lines; output.hint() removed from skill/agent/command
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
+- Total plans completed: 13
 - Average duration: 2 min
-- Total execution time: 24 min
+- Total execution time: 26 min
 
 **By Phase:**
 
@@ -64,5 +64,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 03-01-PLAN.md — @inquirer/prompts ^8.3.0 installed, src/menu.ts created with two-level interactive menu (DISC-01), TypeScript builds cleanly
+Stopped at: Completed 03-03-PLAN.md — author attribution on all four installers, output.hint() removed from skill/agent/command, DISC-03 satisfied
 Resume file: None
