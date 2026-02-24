@@ -16,10 +16,10 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./components/skills/tech-product-landing",
-        "./components/skills/video-download",
-        "./components/skills/video-fetch-and-summarize",
-        "./components/skills/video-summarizer"
+        "./skills/tech-product-landing",
+        "./skills/video-download",
+        "./skills/video-fetch-and-summarize",
+        "./skills/video-summarizer"
       ]
     }
   ]

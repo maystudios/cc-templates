@@ -45,10 +45,11 @@ function buildCatalog() {
 
   for (const type of COMPONENT_TYPES) {
     catalog[type] = [];
-    const typeDir = join(ROOT, 'components', type);
+    // Skills live in top-level skills/, all others in components/<type>/
+    const typeDir = type === 'skills' ? join(ROOT, 'skills') : join(ROOT, 'components', type);
 
     if (!existsSync(typeDir)) {
-      console.warn(`WARN: components/${type}/ does not exist — skipping`);
+      console.warn(`WARN: ${type === 'skills' ? 'skills' : 'components/' + type}/ does not exist — skipping`);
       continue;
     }
 
